@@ -47,7 +47,7 @@ def main():
     print(general_frequencies[:10])
 
     # Data for plotting
-    labels = word_frequencies.keys()
+    labels = [key.replace("HTL", "") for key in word_frequencies.keys()] # remove htl from the name, so effected people stop complaining
     sizes = [total_words(word_freq) for word_freq in word_frequencies.values()]
     explode = [0.2 if size == max(sizes) else 0.1 for size in sizes]
 
